@@ -1,0 +1,7 @@
+local_repository(name="auto", path="../auto")
+
+load("@auto//:search_libs.bzl", "search_libs")
+load("@auto//:check_headers.bzl", "check_headers")
+
+search_libs(name="math", symbol="sin", libs=["m"])
+check_headers(name="headers", headerfiles=["stdio.h", "math.h"])
